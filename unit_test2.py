@@ -99,8 +99,6 @@ class TestInterestRewardsAcct(unittest.TestCase):
         self.account.deposit(10)
         self.assertAlmostEqual(self.account.balance, 1010.5)  # 1000 + 10 * 1.05
 
-    # ... More tests ...
-
 
 class TestSavingsAcct(unittest.TestCase):
 
@@ -139,7 +137,6 @@ class TestInterestRewardsAcctEdgeCases(unittest.TestCase):
         with self.assertRaises(BalanceException):
             self.account.withdraw(self.account.balance + 1)  # Withdraw more than balance
 
-    # ... More tests ...
 class TestSavingsAcctEdgeCases(unittest.TestCase):
 
     def setUp(self):
@@ -166,8 +163,6 @@ class TestBankAccountSequentialTransactions(unittest.TestCase):
         self.account.withdraw(25)
         expected_final_balance = 1000 + 200 - 100 + 50 - 25
         self.assertEqual(self.account.balance, expected_final_balance)
-
-# ... More tests ...
 
 class TestChildAccount(unittest.TestCase):
 
